@@ -66,7 +66,7 @@ fun NewsListScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            onClick = { viewModel.loginUseCase() },
+            onClick = { viewModel.sendCredentials() },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Login")
