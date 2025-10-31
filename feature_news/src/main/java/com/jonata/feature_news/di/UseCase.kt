@@ -2,6 +2,7 @@ package com.jonata.feature_news.di
 
 import com.jonata.domain.repository.AuthRepository
 import com.jonata.domain.repository.TokenRepository
+import com.jonata.domain.usecase.login.GetUserDataUseCase
 import com.jonata.domain.usecase.login.LoginUseCase
 import dagger.Module
 import dagger.Provides
@@ -34,6 +35,15 @@ object UseCase{
         @IoDispatcher dispatcher: CoroutineDispatcher
     ): LoginUseCase{
         return LoginUseCase(authRepository,tokenRepository,dispatcher)
+    }
+
+    @Provides
+    @Singleton
+    fun providesGetUserDataUseCase(
+        tokenRepository: TokenRepository,
+        @IoDispatcher dispatcher: CoroutineDispatcher
+    ): GetUserDataUseCase{
+        return GetUserDataUseCase(tokenRepository,dispatcher)
     }
 
 }

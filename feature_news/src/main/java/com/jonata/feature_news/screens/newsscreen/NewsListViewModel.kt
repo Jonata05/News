@@ -22,9 +22,22 @@ class NewsListViewModel @Inject constructor(
 ) : ViewModel() {
 
 
+    private val _email = MutableStateFlow("")
+    val email: StateFlow<String> = _email
 
-    private val _token = MutableStateFlow("")
-    val token: StateFlow<String> = _token
+
+    private val _password = MutableStateFlow("")
+    val password: StateFlow<String> = _password
+
+
+
+    fun updateEmail(value: String){
+        _email.value = value
+    }
+
+    fun updatePassword(value: String){
+        _password.value = value
+    }
 
 
 
@@ -33,8 +46,8 @@ class NewsListViewModel @Inject constructor(
     Log.d("LoginInBackground", "Login")
 
         val userCredentials = UserCredentials(
-            email = Email("jntferreiratj@hotmail.com"),
-            password = Password("Reis1914")
+            email = Email(email.value),
+            password = Password(password.value)
         )
 
          useCaseExecutor(loginUseCase, userCredentials){
