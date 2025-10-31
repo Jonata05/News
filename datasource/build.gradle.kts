@@ -28,7 +28,7 @@ android {
 
 
 
-        buildConfigField("String", "FIREBASE_API_KEY", "\"${firebaseApiKey}\"")
+        buildConfigField("String", "FIREBASE_API_KEY", "${firebaseApiKey}")
 
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -66,9 +66,11 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.android.compiler)
 
+    implementation(libs.androidx.security.crypto)
+
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
 
-    implementation("androidx.datastore:datastore-preferences:1.1.0")
+    implementation(libs.androidx.datastore.preferences)
 }

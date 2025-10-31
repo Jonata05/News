@@ -28,7 +28,7 @@ fun NewsListScreen(
 
         Text(token.toString())
 
-        Button({viewModel.login()}) {
+        Button({viewModel.loginUseCase()}) {
             Text("Clique")
         }
     }

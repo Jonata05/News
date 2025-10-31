@@ -1,6 +1,6 @@
 package com.jonata.feature_news.di
 
-import com.jonata.domain.usecase.core.UseCaseExecute
+import com.jonata.domain.usecase.generics.UseCaseExecutor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,9 @@ import javax.inject.Singleton
 object CoroutineModule {
 
 
+
+
+
     @Provides
     @Singleton
     fun provideCoroutineScope(): CoroutineScope =
@@ -24,5 +27,5 @@ object CoroutineModule {
     @Singleton
     fun provideUseCaseExecutor(
         scope: CoroutineScope
-    ): UseCaseExecute = UseCaseExecute(scope)
+    ): UseCaseExecutor = UseCaseExecutor(scope)
 }

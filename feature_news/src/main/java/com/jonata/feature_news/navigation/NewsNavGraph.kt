@@ -6,20 +6,19 @@ import androidx.navigation.navigation
 import com.jonata.core.navigation.NewsNavGraphRoute
 import com.jonata.feature_news.screens.newsdetails.NewsDetailsScreen
 import com.jonata.feature_news.screens.newsscreen.NewsListScreen
-import kotlinx.serialization.Serializable
 
 fun NavGraphBuilder.newsNavGraph(){
 
 
     navigation<NewsNavGraphRoute.Root>(
-        startDestination = NewsNavGraphRoute.NewsList){
+        startDestination = NewsNavGraphRoute.NewsLogin){
 
-        composable<NewsNavGraphRoute.NewsList>() {
+        composable<NewsNavGraphRoute.NewsLogin>() {
             NewsListScreen()
         }
 
 
-        composable<NewsNavGraphRoute.ListDetail>() {
+        composable<NewsNavGraphRoute.NewsHomeScreen>() {
             NewsDetailsScreen()
         }
 

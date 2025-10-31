@@ -3,8 +3,11 @@ package com.jonata.feature_news.screens.newsscreen
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jonata.domain.usecase.LoginUseCase
-import com.jonata.domain.usecase.core.UseCaseExecute
+import com.jonata.domain.model.UserCredentials
+import com.jonata.domain.model.Email
+import com.jonata.domain.model.Password
+import com.jonata.domain.usecase.login.LoginUseCase
+import com.jonata.domain.usecase.generics.UseCaseExecutor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class NewsListViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
-    private val useCaseExecutor: UseCaseExecute
+    private val useCaseExecutor: UseCaseExecutor
 ) : ViewModel() {
 
 
@@ -27,9 +30,17 @@ class NewsListViewModel @Inject constructor(
 
     fun loginUseCase(){
 
-         useCaseExecutor(loginUseCase, input = "",){
+    Log.d("LoginInBackground", "Login")
+
+        val userCredentials = UserCredentials(
+            email = Email("jntferreiratj@hotmail.com"),
+            password = Password("Reis1914")
+        )
+
+         useCaseExecutor(loginUseCase, userCredentials){
 
              isSuccess {
+
 
              }
 
@@ -42,16 +53,6 @@ class NewsListViewModel @Inject constructor(
     }
 
 
-    fun login(){
-        viewModelScope.launch {
-            Log.d("Maria", "this")
-
-
-
-
-            Log.d("Maria", "this")
-        }
-    }
 
 
 

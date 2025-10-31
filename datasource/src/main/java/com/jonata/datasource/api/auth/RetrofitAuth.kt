@@ -20,10 +20,9 @@ object RetrofitAuth {
 
     @Provides
     @Singleton
-    fun provideRefreshRetrofit(@ApplicationContext context: Context): ApiAuthService =
+    fun provideRefreshRetrofit(): ApiAuthService =
         Retrofit.Builder()
-            .baseUrl("https://identitytoolkit.googleapis.com/eu")
-            .client(OkHttpClient.Builder().build()) // sem AuthInterceptor
+            .baseUrl("https://identitytoolkit.googleapis.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiAuthService::class.java)

@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(project(":feature_news"))
     implementation(project(":core"))
+    implementation(project(":domain"))
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
     implementation(project(":datasource"))

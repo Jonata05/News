@@ -3,12 +3,16 @@ package com.jonata.news.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.jonata.core.navigation.NewsNavGraphRoute
 import com.jonata.core.navigation.type.NavGraphRoute
 import com.jonata.feature_news.navigation.newsNavGraph
+import com.jonata.feature_news.screens.newsdetails.NewsDetailsScreen
 
 
 @Composable
 fun NavHostApp(navHostController: NavHostController, startDestination: NavGraphRoute){
+
 
 
     NavHost(
@@ -16,6 +20,11 @@ fun NavHostApp(navHostController: NavHostController, startDestination: NavGraphR
         startDestination = startDestination,
     ){
         newsNavGraph()
+
+        composable<NewsNavGraphRoute.NewsHomeScreen>() {
+            NewsDetailsScreen()
+        }
+
     }
 
 }

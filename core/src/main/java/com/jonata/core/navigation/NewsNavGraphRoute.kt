@@ -11,9 +11,9 @@ sealed class NewsNavGraphRoute {
     data object Root: NavGraphRoute()
 
     @Serializable
-    data object NewsList: NavGraphRoute()
+    data object NewsLogin: NavGraphRoute()
 
     @Serializable
-    data object ListDetail: NavGraphRoute()
+    data object NewsHomeScreen: NavGraphRoute()
 
 }
