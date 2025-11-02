@@ -14,7 +14,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/datasource" />
             <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/feature_news" />
+            <option value="$PROJECT_DIR$/feature_login" />
           </set>
         </option>
       </GradleProjectSettings>

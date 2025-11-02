@@ -58,7 +58,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    implementation(project(":feature_news"))
+    implementation(project(":feature_login"))
     implementation(project(":core"))
     implementation(project(":domain"))
     ksp(libs.hilt.android.compiler)

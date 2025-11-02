@@ -17,7 +17,7 @@ class AuthRepositoryImpl @Inject constructor(
 ): AuthRepository {
 
 
-    override suspend fun login(userCredentials: UserCredentials) : Token {
+    override suspend fun signIn(userCredentials: UserCredentials) : Token {
 
         val key = "AIzaSyA18DTqqQYujRehCDUjay2SC-i47U8V8gw"
         val url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=$key"
@@ -29,14 +29,6 @@ class AuthRepositoryImpl @Inject constructor(
     }
 
 
-//    override suspend fun updateIdToken(refreshToken: String) : Token{
-//
-//        val request = RefreshRequest(refreshToken)
-//        val response = apiAuthService.refreshToken(request)
-//        response.toToken()
-//
-//        return TokenResponse("","","","",true,"",0L)
-//    }
 
 
 
