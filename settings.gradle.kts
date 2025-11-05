@@ -27,3 +27,4 @@ include(":feature_login")
 include(":core")
 
 
+include(":data")
