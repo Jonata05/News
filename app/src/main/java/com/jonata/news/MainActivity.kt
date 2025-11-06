@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
-import com.jonata.datasource.local.localdatasource.AuthLocalDataSourceImpl
+import com.jonata.datasource.local.localdatasourceimpl.AuthLocalDataSourceImpl
 import com.jonata.news.navigation.NavHostApp
 import com.jonata.news.ui.splash.RouteSplashScreen
 import com.jonata.news.ui.theme.NewsTheme
