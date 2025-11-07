@@ -28,3 +28,4 @@ include(":core")
 
 
 include(":data")
+include(":feature_auth")

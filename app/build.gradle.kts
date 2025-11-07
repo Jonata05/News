@@ -61,6 +61,7 @@ dependencies {
     implementation(project(":feature_login"))
     implementation(project(":core"))
     implementation(project(":domain"))
+    implementation(project(":feature_auth"))
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
     implementation(project(":datasource"))
