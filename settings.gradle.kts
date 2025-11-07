@@ -23,7 +23,6 @@ rootProject.name = "news"
 include(":app")
 include(":datasource")
 include(":domain")
-include(":feature_login")
 include(":core")
 
 
