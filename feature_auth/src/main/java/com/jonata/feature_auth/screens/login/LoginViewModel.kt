@@ -9,6 +9,7 @@ import com.jonata.domain.model.Password
 import com.jonata.domain.generics.Validate
 import com.jonata.domain.usecase.login.LoginUseCase
 import com.jonata.domain.usecase.generics.UseCaseExecutor
+import com.jonata.domain.usecase.login.SignUpUseCase
 import com.jonata.feature_auth.navigation.NewsNavGraphRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -21,7 +22,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase,
+    private val signUpUseCase: SignUpUseCase,
     private val useCaseExecutor: UseCaseExecutor
 ) : ViewModel() {
 
@@ -57,7 +58,7 @@ class LoginViewModel @Inject constructor(
     fun login(userCredentials: UserCredentials){
 
 
-            useCaseExecutor(loginUseCase, userCredentials) {
+            useCaseExecutor(signUpUseCase, userCredentials) {
 
                 isSuccess {
 
