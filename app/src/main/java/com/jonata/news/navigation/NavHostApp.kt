@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.jonata.core.components.NavigateManager
+import com.jonata.core.navigation.NavigateManager
 import com.jonata.core.navigation.NavRoute
 import com.jonata.feature_auth.navigation.newsNavGraph
 import com.jonata.news.ui.splash.splashScreen
