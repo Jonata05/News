@@ -31,6 +31,9 @@ class HomeViewModel @Inject constructor(
     private val _navigate = MutableSharedFlow<NavRoute>()
     val navigate = _navigate.asSharedFlow()
 
+    private val _snackBarMessage = MutableSharedFlow<String>()
+    val snackBarMessage = _snackBarMessage.asSharedFlow()
+
     private val _idToken = MutableStateFlow("")
     val idToken: StateFlow<String> = _idToken
 

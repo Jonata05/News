@@ -12,7 +12,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -21,6 +20,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.jonata.core.components.NavigateTo
 
 
 @Composable
@@ -34,15 +34,10 @@ fun LoginScreen(
     val password by viewModel.password.collectAsState()
 
 
-    LaunchedEffect(Unit) {
-        viewModel.navigate.collect { route->
+    NavigateTo(viewModel.navigate,navController)
 
-            navController.navigate(route) {
-                popUpTo(0) { inclusive = true } // opcional
-            }
-        }
 
-    }
+
 
 
 

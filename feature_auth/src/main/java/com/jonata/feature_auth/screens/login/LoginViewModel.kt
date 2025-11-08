@@ -56,25 +56,17 @@ class LoginViewModel @Inject constructor(
 
     fun login(userCredentials: UserCredentials){
 
-
             useCaseExecutor(signUpUseCase, userCredentials) {
 
                 isSuccess {
-
                     viewModelScope.launch {
-                        _navigate.emit( NewsNavGraphRoute.NewsHomeScreen)
+                        _navigate.emit(NewsNavGraphRoute.NewsHomeScreen)
                     }
-
                 }
 
                 isFailure {
-
                 }
 
             }
-
-
     }
-
-
 }

@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.jonata.core.components.NavigateTo
+import com.jonata.core.components.SnackBarManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -18,16 +20,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
 
-
-    LaunchedEffect(Unit) {
-        viewModel.navigate.collect { route->
-
-            navController.navigate(route) {
-                popUpTo(0) { inclusive = true } // opcional
-            }
-        }
-
-    }
 
     val idToken by viewModel.idToken.collectAsState()
     val expiresAt by viewModel.expiresAt.collectAsState()
@@ -39,7 +31,14 @@ fun HomeScreen(
 
     val scroll = rememberScrollState()
 
+    SnackBarManager.ShowMessage(viewModel.snackBarMessage)
+    NavigateTo(viewModel.navigate,navController)
+
+
+
+
     Scaffold(
+        snackbarHost = { SnackBarManager.SnackBarHost()},
         topBar = {
             TopAppBar(title = { Text("Token Info") })
         }
