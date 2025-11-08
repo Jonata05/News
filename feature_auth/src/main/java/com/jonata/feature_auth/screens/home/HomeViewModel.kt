@@ -3,6 +3,7 @@ package com.jonata.feature_auth.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jonata.core.components.SnackBarManager
 import com.jonata.core.navigation.NavRoute
 import com.jonata.domain.usecase.generics.UseCaseExecutor
 import com.jonata.domain.usecase.login.GetUserDataUseCase
@@ -30,9 +31,6 @@ class HomeViewModel @Inject constructor(
 
     private val _navigate = MutableSharedFlow<NavRoute>()
     val navigate = _navigate.asSharedFlow()
-
-    private val _snackBarMessage = MutableSharedFlow<String>()
-    val snackBarMessage = _snackBarMessage.asSharedFlow()
 
     private val _idToken = MutableStateFlow("")
     val idToken: StateFlow<String> = _idToken
@@ -86,6 +84,14 @@ class HomeViewModel @Inject constructor(
                 }
             }
         }
+
+    }
+
+
+
+    fun feedback(){
+
+        SnackBarManager.emit(viewModelScope,"Bom dia")
 
     }
 

@@ -9,14 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.navigation.NavController
-import com.jonata.core.components.NavigateTo
+import com.jonata.core.components.NavigateManager
 import com.jonata.core.components.SnackBarManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    navController: NavController,
+    navigateManager: NavigateManager,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
 
@@ -31,14 +30,13 @@ fun HomeScreen(
 
     val scroll = rememberScrollState()
 
-    SnackBarManager.ShowMessage(viewModel.snackBarMessage)
-    NavigateTo(viewModel.navigate,navController)
 
-
+    navigateManager.PopUpTo(viewModel.navigate)
+    SnackBarManager.ListenMessages()
 
 
     Scaffold(
-        snackbarHost = { SnackBarManager.SnackBarHost()},
+        snackbarHost = { SnackBarManager.snackBarHost},
         topBar = {
             TopAppBar(title = { Text("Token Info") })
         }
@@ -61,13 +59,20 @@ fun HomeScreen(
             TokenInfoItem(label = "Local ID", value = localId)
             Button({ viewModel.logout() },
                 modifier = Modifier
-                    .fillMaxWidth(0.6f) // opcional: define uma largura menor que 100%
+                    .fillMaxWidth(0.6f)
                     .align(Alignment.CenterHorizontally)) {
                 Text("Sair")
+            }
+            Button({ viewModel.feedback() },
+                modifier = Modifier
+                    .fillMaxWidth(0.6f)
+                    .align(Alignment.CenterHorizontally)) {
+                Text("toast")
             }
         }
     }
 }
+
 
 @Composable
 private fun TokenInfoItem(label: String, value: String) {

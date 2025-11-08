@@ -1,5 +1,6 @@
 package com.jonata.feature_auth.screens.login
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jonata.core.navigation.NavRoute
@@ -27,6 +28,9 @@ class LoginViewModel @Inject constructor(
 
     private val _navigate = MutableSharedFlow<NavRoute>()
     val navigate = _navigate.asSharedFlow()
+
+    private val _snackBarMessage = MutableSharedFlow<String>()
+    val snackBarMessage = _snackBarMessage.asSharedFlow()
 
     private val _email = MutableStateFlow("")
     val email: StateFlow<String> = _email
@@ -64,7 +68,11 @@ class LoginViewModel @Inject constructor(
                     }
                 }
 
-                isFailure {
+                isFailure {error ->
+                    Log.d("casaboas","casaboas")
+                    viewModelScope.launch {
+                        _snackBarMessage.emit(error.getMessage)
+                    }
                 }
 
             }

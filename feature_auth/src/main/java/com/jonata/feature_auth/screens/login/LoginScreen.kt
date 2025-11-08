@@ -19,13 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.navigation.NavController
-import com.jonata.core.components.NavigateTo
+import com.jonata.core.components.NavigateManager
 
 
 @Composable
 fun LoginScreen(
-    navController: NavController,
+    navigateManager: NavigateManager,
     viewModel: LoginViewModel = hiltViewModel()
 ){
 
@@ -34,8 +33,7 @@ fun LoginScreen(
     val password by viewModel.password.collectAsState()
 
 
-    NavigateTo(viewModel.navigate,navController)
-
+    navigateManager.PopUpTo(viewModel.navigate)
 
 
 

@@ -1,14 +1,14 @@
 package com.jonata.feature_auth.navigation
 
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.jonata.core.components.NavigateManager
 import com.jonata.feature_auth.screens.home.HomeScreen
 import com.jonata.feature_auth.screens.login.LoginScreen
 
 fun NavGraphBuilder.newsNavGraph(
-    navController: NavController
+    navigateManager: NavigateManager
 ){
 
 
@@ -16,12 +16,12 @@ fun NavGraphBuilder.newsNavGraph(
         startDestination = NewsNavGraphRoute.NewsLoginScreen){
 
         composable<NewsNavGraphRoute.NewsLoginScreen>() {
-            LoginScreen( navController)
+            LoginScreen( navigateManager)
         }
 
 
         composable<NewsNavGraphRoute.NewsHomeScreen>() {
-            HomeScreen(navController)
+            HomeScreen(navigateManager)
         }
 
     }
