@@ -9,8 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.jonata.core.navigation.NavigateManager
-import com.jonata.core.feedback.SnackBarManager
+import com.jonata.core.presentetion.navigation.NavigateManager
+import com.jonata.core.presentetion.feedback.SnackBarManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

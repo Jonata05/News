@@ -1,6 +1,6 @@
 package com.jonata.feature_auth.navigation
 
-import com.jonata.core.navigation.NavRoute
+import com.jonata.core.presentetion.navigation.NavRoute
 import kotlinx.serialization.Serializable
 
 

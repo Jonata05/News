@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.jonata.core.navigation.NavigateManager
+import com.jonata.core.presentetion.navigation.NavigateManager
 
 
 @Composable

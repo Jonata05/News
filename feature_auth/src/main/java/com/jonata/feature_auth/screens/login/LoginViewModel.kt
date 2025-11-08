@@ -3,7 +3,7 @@ package com.jonata.feature_auth.screens.login
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jonata.core.navigation.NavRoute
+import com.jonata.core.presentetion.navigation.NavRoute
 import com.jonata.domain.model.UserCredentials
 import com.jonata.domain.model.Email
 import com.jonata.domain.model.Password

@@ -3,8 +3,8 @@ package com.jonata.feature_auth.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jonata.core.feedback.SnackBarManager
-import com.jonata.core.navigation.NavRoute
+import com.jonata.core.presentetion.feedback.SnackBarManager
+import com.jonata.core.presentetion.navigation.NavRoute
 import com.jonata.domain.usecase.generics.UseCaseExecutor
 import com.jonata.domain.usecase.login.GetUserDataUseCase
 import com.jonata.domain.usecase.login.LogoutUseCase
